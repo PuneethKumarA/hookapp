@@ -1,33 +1,20 @@
 import logo from './logo.svg';
 import './App.css';
 
-import React, { useReducer } from 'react';
-
-import DataFetchingTwo from './components/useReducercases/DataFetchingTwo';
-
-export const CountContext = React.createContext()
-const initialState = 0
+import DataFetching from './components/useeffecthook/DataFetching';
+import ComponentA from './components/contexthook/ComponentA';
+import React from 'react';
 
 
-const reducer = (state, action) => {
-  switch (action) {
-    case 'increment': return state + 1
-    case 'decrement': return state - 1
-    case 'reset': return initialState
-    default: return state
-  }
-}
+export const UserContext = React.createContext()
 
 function App() {
   return (
     <div className="App">
-
-      
-      <DataFetchingTwo />
+      <UserContext.Provider value = {'puneeth'} >
+        <ComponentA/>
+     </UserContext.Provider>
     </div>
-    
-
   );
 }
-
 export default App;
